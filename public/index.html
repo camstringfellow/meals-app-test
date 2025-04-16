@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Finder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-4xl font-bold text-center mb-8 text-indigo-600">Recipe Finder</h1>
+        
+        <!-- Initial Selection Screen -->
+        <div id="initial-selection" class="max-w-md mx-auto bg-white rounded-lg shadow-md p-6">
+            <h2 class="text-xl font-semibold mb-4">How would you like to find your recipe?</h2>
+            <div class="grid grid-cols-2 gap-4">
+                <button id="mood-btn" class="selection-btn bg-blue-100 hover:bg-blue-200 text-blue-800 py-4 px-6 rounded-lg transition-colors text-lg">
+                    By Mood 😊
+                </button>
+                <button id="time-btn" class="selection-btn bg-green-100 hover:bg-green-200 text-green-800 py-4 px-6 rounded-lg transition-colors text-lg">
+                    By Time ⏰
+                </button>
+            </div>
+        </div>
+
+        <!-- Mood Selection Screen -->
+        <div id="mood-selection" class="max-w-md mx-auto bg-white rounded-lg shadow-md p-6 hidden">
+            <h2 class="text-xl font-semibold mb-4">How are you feeling today?</h2>
+            <div class="grid grid-cols-2 gap-4 mb-6">
+                <button class="mood-btn bg-blue-100 hover:bg-blue-200 text-blue-800 py-2 px-4 rounded-lg transition-colors" data-mood="happy">😊 Happy</button>
+                <button class="mood-btn bg-green-100 hover:bg-green-200 text-green-800 py-2 px-4 rounded-lg transition-colors" data-mood="energetic">⚡ Energetic</button>
+                <button class="mood-btn bg-yellow-100 hover:bg-yellow-200 text-yellow-800 py-2 px-4 rounded-lg transition-colors" data-mood="comfort">🛋️ Comfort</button>
+                <button class="mood-btn bg-red-100 hover:bg-red-200 text-red-800 py-2 px-4 rounded-lg transition-colors" data-mood="adventurous">🌍 Adventurous</button>
+            </div>
+            <button id="back-to-initial" class="text-indigo-600 hover:text-indigo-800">← Back</button>
+        </div>
+
+        <!-- Time Selection Screen -->
+        <div id="time-selection" class="max-w-md mx-auto bg-white rounded-lg shadow-md p-6 hidden">
+            <h2 class="text-xl font-semibold mb-4">How much time do you have?</h2>
+            <div class="grid grid-cols-2 gap-4 mb-6">
+                <button class="time-btn bg-purple-100 hover:bg-purple-200 text-purple-800 py-2 px-4 rounded-lg transition-colors" data-time="quick">Quick (15-30 min)</button>
+                <button class="time-btn bg-orange-100 hover:bg-orange-200 text-orange-800 py-2 px-4 rounded-lg transition-colors" data-time="medium">Medium (30-45 min)</button>
+                <button class="time-btn bg-pink-100 hover:bg-pink-200 text-pink-800 py-2 px-4 rounded-lg transition-colors" data-time="long">Long (45+ min)</button>
+                <button class="time-btn bg-teal-100 hover:bg-teal-200 text-teal-800 py-2 px-4 rounded-lg transition-colors" data-time="mealprep">Meal Prep</button>
+            </div>
+            <button id="back-to-initial-time" class="text-indigo-600 hover:text-indigo-800">← Back</button>
+        </div>
+
+        <!-- Recipe Display -->
+        <div id="recipe-container" class="max-w-md mx-auto bg-white rounded-lg shadow-md p-6 hidden">
+            <div class="border-t pt-4">
+                <h3 class="text-lg font-semibold mb-2" id="recipe-name"></h3>
+                <div class="mb-4">
+                    <h4 class="font-medium text-gray-700">Ingredients:</h4>
+                    <ul id="ingredients" class="list-disc pl-4 text-gray-600"></ul>
+                </div>
+                <div class="mb-4">
+                    <h4 class="font-medium text-gray-700">Instructions:</h4>
+                    <p id="instructions" class="text-gray-600"></p>
+                </div>
+                <div class="flex justify-between">
+                    <button id="new-recipe" class="bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-700 transition-colors">
+                        Get Another Recipe
+                    </button>
+                    <button id="back-to-selection" class="text-indigo-600 hover:text-indigo-800 py-2 px-4">
+                        ← Back to Selection
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
