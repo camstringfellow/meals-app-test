@@ -107,6 +107,48 @@ const recipes = [
         ingredients: "8 eggs, 1/2 lb turkey sausage, 1 cup black beans, 1 cup cheese, 4 large tortillas, 1 bell pepper, 1 onion",
         instructions: "1. Cook all ingredients. 2. Assemble burritos. 3. Wrap in foil. 4. Freeze for later.",
         time: "mealprep"
+    },
+    {
+        name: "Warm Milk and Honey Oatmeal",
+        ingredients: "1 cup rolled oats, 2 cups milk, 2 tbsp honey, 1/2 tsp cinnamon, 1/4 tsp nutmeg, 1 banana, 1 tbsp almond butter, 1/4 cup walnuts",
+        instructions: "1. Heat milk in saucepan. 2. Add oats and cook until creamy. 3. Stir in honey, cinnamon, and nutmeg. 4. Top with sliced banana, almond butter, and walnuts.",
+        mood: "sleepy",
+        time: "quick"
+    },
+    {
+        name: "Turkey and Sweet Potato Mash",
+        ingredients: "1/2 lb ground turkey, 2 sweet potatoes, 1/2 cup spinach, 1/4 cup feta cheese, 1 tbsp olive oil, 1/2 tsp rosemary, 1/2 tsp thyme, salt and pepper to taste",
+        instructions: "1. Bake sweet potatoes until soft. 2. Cook turkey with herbs. 3. Mash sweet potatoes with olive oil. 4. Mix in turkey, spinach, and feta.",
+        mood: "sleepy",
+        time: "medium"
+    },
+    {
+        name: "Chamomile Tea Poached Chicken",
+        ingredients: "2 chicken breasts, 2 cups chamomile tea, 1/2 cup quinoa, 1/2 cup steamed carrots, 1/4 cup almonds, 1 tbsp honey, 1 tbsp olive oil",
+        instructions: "1. Poach chicken in chamomile tea. 2. Cook quinoa. 3. Slice chicken and serve over quinoa. 4. Top with carrots, almonds, and honey drizzle.",
+        mood: "sleepy",
+        time: "medium"
+    },
+    {
+        name: "Lavender Honey Salmon",
+        ingredients: "2 salmon fillets, 2 tbsp honey, 1 tbsp dried lavender, 1/2 cup couscous, 1/2 cup steamed asparagus, 1 lemon, 1 tbsp olive oil",
+        instructions: "1. Mix honey and lavender. 2. Coat salmon with mixture. 3. Bake at 375°F for 15 minutes. 4. Serve with couscous and asparagus.",
+        mood: "sleepy",
+        time: "medium"
+    },
+    {
+        name: "Sleepy Time Smoothie",
+        ingredients: "1 banana, 1/2 cup Greek yogurt, 1/2 cup milk, 1 tbsp honey, 1/4 tsp cinnamon, 1/4 tsp nutmeg, 1 tbsp almond butter, 1/4 cup oats",
+        instructions: "1. Blend all ingredients until smooth. 2. Pour into glasses. 3. Sprinkle with additional cinnamon if desired.",
+        mood: "sleepy",
+        time: "quick"
+    },
+    {
+        name: "Warm Quinoa and Cherry Bowl",
+        ingredients: "1 cup cooked quinoa, 1/2 cup cherries, 1/4 cup walnuts, 1 tbsp honey, 1/2 tsp cinnamon, 1/4 cup Greek yogurt",
+        instructions: "1. Warm quinoa. 2. Mix in cherries and walnuts. 3. Drizzle with honey and cinnamon. 4. Top with Greek yogurt.",
+        mood: "sleepy",
+        time: "quick"
     }
 ];
 

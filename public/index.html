@@ -8,8 +8,11 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-gray-100 min-h-screen">
+    <!-- Include Header -->
+    <div id="header"></div>
+
     <div class="container mx-auto px-4 py-8">
-        <h1 class="text-4xl font-bold text-center mb-8 text-indigo-600">Recipe Finder</h1>
+        <h2 class="text-4xl font-bold text-center mb-8 text-indigo-600">Find Your Perfect Recipe</h2>
         
         <!-- Initial Selection Screen -->
         <div id="initial-selection" class="max-w-md mx-auto bg-white rounded-lg shadow-md p-6">
@@ -32,6 +35,7 @@
                 <button class="mood-btn bg-green-100 hover:bg-green-200 text-green-800 py-2 px-4 rounded-lg transition-colors" data-mood="energetic">⚡ Energetic</button>
                 <button class="mood-btn bg-yellow-100 hover:bg-yellow-200 text-yellow-800 py-2 px-4 rounded-lg transition-colors" data-mood="comfort">🛋️ Comfort</button>
                 <button class="mood-btn bg-red-100 hover:bg-red-200 text-red-800 py-2 px-4 rounded-lg transition-colors" data-mood="adventurous">🌍 Adventurous</button>
+                <button class="mood-btn bg-indigo-100 hover:bg-indigo-200 text-indigo-800 py-2 px-4 rounded-lg transition-colors" data-mood="sleepy">😴 Sleepy</button>
             </div>
             <button id="back-to-initial" class="text-indigo-600 hover:text-indigo-800">← Back</button>
         </div>

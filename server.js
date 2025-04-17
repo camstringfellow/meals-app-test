@@ -59,9 +59,30 @@ app.get('/api/recipes/:type/:value', (req, res) => {
     });
 });
 
+// New route to get all recipes
+app.get('/api/recipes/all', (req, res) => {
+    db.all('SELECT * FROM recipes', (err, rows) => {
+        if (err) {
+            res.status(500).json({ error: err.message });
+            return;
+        }
+        res.json(rows);
+    });
+});
+
 // Serve the main page
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+// Serve the recipes page
+app.get('/recipes', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'recipes.html'));
+});
+
+// Serve the header component
+app.get('/header.html', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'header.html'));
 });
 
 app.listen(port, () => {

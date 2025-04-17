@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Recipes - Recipe Finder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <!-- Include Header -->
+    <div id="header"></div>
+
+    <div class="container mx-auto px-4 py-8">
+        <h2 class="text-4xl font-bold text-center mb-8 text-indigo-600">All Recipes</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Recipe cards will be inserted here by JavaScript -->
+        </div>
+    </div>
+
+    <script>
+        // Load header
+        fetch('/header.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('header').innerHTML = html;
+            });
+
+        // Fetch and display all recipes
+        async function loadRecipes() {
+            try {
+                const response = await fetch('/api/recipes/all');
+                const recipes = await response.json();
+                
+                const container = document.querySelector('.grid');
+                recipes.forEach(recipe => {
+                    const card = document.createElement('div');
+                    card.className = 'bg-white rounded-lg shadow-md p-6';
+                    card.innerHTML = `
+                        <h3 class="text-xl font-semibold mb-2">${recipe.name}</h3>
+                        <div class="mb-4">
+                            <span class="inline-block bg-indigo-100 text-indigo-800 text-xs px-2 py-1 rounded-full mr-2">
+                                ${recipe.mood || 'No mood'}
+                            </span>
+                            <span class="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">
+                                ${recipe.time || 'No time'}
+                            </span>
+                        </div>
+                        <div class="mb-4">
+                            <h4 class="font-medium text-gray-700">Ingredients:</h4>
+                            <ul class="list-disc pl-4 text-gray-600">
+                                ${recipe.ingredients.split(',').map(ingredient => 
+                                    `<li>${ingredient.trim()}</li>`
+                                ).join('')}
+                            </ul>
+                        </div>
+                        <div class="mb-4">
+                            <h4 class="font-medium text-gray-700">Instructions:</h4>
+                            <p class="text-gray-600">${recipe.instructions}</p>
+                        </div>
+                    `;
+                    container.appendChild(card);
+                });
+            } catch (error) {
+                console.error('Error loading recipes:', error);
+            }
+        }
+
+        loadRecipes();
+    </script>
+</body>
+</html> 
